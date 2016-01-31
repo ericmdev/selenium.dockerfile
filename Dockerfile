@@ -32,13 +32,13 @@ RUN apt-get update && apt-get install -y \
     xvfb
 
 # Add scripts.
-ADD ./scripts/ /home/scripts
+ADD ./bin/ /bin
 
-# Listen on selenium port.
+# Expose ports.
 EXPOSE 4444
 
 # Configure executable.
-ENTRYPOINT ["sh", "/home/scripts/start.sh"]
+ENTRYPOINT ["sh", "/bin/start.sh"]
 
 # Define default command.
 CMD []
